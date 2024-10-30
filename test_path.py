@@ -88,12 +88,12 @@ def astar(env, start, goal):
                 g_score[neighbor] = tentative_g_score 
                 f_score[neighbor] = tentative_g_score + heuristic(neighbor, goal) # Total distance from current to neigbors (will be cumulative)
                 if neighbor not in [i[1] for i in open_set]:
-                    open_set.append((f_score[neighbor], neighbor))
+                    open_set.append((f_score[neighbor], neighbor)) # Adds the new node to the open set
 
     return None
 
 def heuristic(a, b):
-    return abs(a[0] - b[0]) + abs(a[1] - b[1])
+    return abs(a[0] - b[0]) + abs(a[1] - b[1]) # Returns distance from point a to point b
 
 def get_neighbors(node, env): # Receive current node and grid --> find adjacent nodes that are not obstacles
     neighbors = []
